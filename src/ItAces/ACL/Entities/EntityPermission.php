@@ -1,11 +1,18 @@
 <?php
 namespace ItAces\ACL\Entities;
 
-use ItAces\ORM\Entities\EntityBase;
-use ItAces\ORM\Entities\Role;
+use App\Model\Role;
+use App\Model\User;
+use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
+use Illuminate\Support\Facades\Auth;
 
-abstract class EntityPermission extends EntityBase
+abstract class EntityPermission
 {
+    
+    /**
+     * @var int
+     */
+    protected $id;
     
     /**
      * 
@@ -15,7 +22,7 @@ abstract class EntityPermission extends EntityBase
     
     /**
      * 
-     * @var \ItAces\ORM\Entities\Role
+     * @var \App\Model\Role
      */
     protected $role;
     
@@ -26,6 +33,31 @@ abstract class EntityPermission extends EntityBase
     protected $model;
     
     /**
+     * @var \Carbon\Carbon
+     */
+    protected $createdAt;
+    
+    /**
+     * @var \Carbon\Carbon|null
+     */
+    protected $updatedAt;
+    
+    /**
+     * @var \Carbon\Carbon|null
+     */
+    protected $deletedAt;
+    
+    /**
+     * @var \App\Model\User
+     */
+    protected $createdBy;
+    
+    /**
+     * @var \App\Model\User
+     */
+    protected $updatedBy;
+    
+    /**
      * @return integer
      */
     public function getPermission()
@@ -34,7 +66,7 @@ abstract class EntityPermission extends EntityBase
     }
 
     /**
-     * @return \ItAces\ORM\Entities\Role
+     * @return \App\Model\Role
      */
     public function getRole()
     {
@@ -50,7 +82,7 @@ abstract class EntityPermission extends EntityBase
     }
 
     /**
-     * @param \ItAces\ORM\Entities\Role $role
+     * @param \App\Model\Role $role
      */
     public function setRole(Role $role)
     {
@@ -73,4 +105,119 @@ abstract class EntityPermission extends EntityBase
         $this->model = $model;
     }
 
+    /**
+     * Set createdAt.
+     *
+     * @param \Carbon\Carbon $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+    
+    /**
+     * Get createdAt.
+     *
+     * @return \Carbon\Carbon
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+    
+    /**
+     * Set updatedAt.
+     *
+     * @param \Carbon\Carbon|null $updatedAt
+     */
+    public function setUpdatedAt($updatedAt = null)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+    
+    /**
+     * Set createdBy.
+     *
+     * @param \App\Model\User $createdBy
+     */
+    public function setCreatedBy(User $createdBy)
+    {
+        $this->createdBy = $createdBy;
+    }
+    
+    /**
+     * Get createdBy.
+     *
+     * @return \App\Model\User
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+    
+    /**
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $event
+     */
+    public function onBeforeAdd(LifecycleEventArgs $event)
+    {
+        $this->createdAt = now();
+        
+        if (Auth::id()) {
+            $this->createdBy = Auth::user();
+        }
+        
+        $this->validate();
+    }
+    
+    /**
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $event
+     */
+    public function onAfterAdd(LifecycleEventArgs $event)
+    {
+        // Add your code here
+    }
+    
+    /**
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $event
+     */
+    public function onBeforeUpdate(LifecycleEventArgs $event)
+    {
+        $this->updatedAt = now();
+        
+        if (Auth::id()) {
+            $this->updatedBy = Auth::user();
+        }
+        
+        $this->validate();
+    }
+    
+    /**
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $event
+     */
+    public function onAfterUpdate(LifecycleEventArgs $event)
+    {
+        // Add your code here
+    }
+    
+    /**
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $event
+     */
+    public function onBeforeDelete(LifecycleEventArgs $event)
+    {
+        // Add your code here
+    }
+    
+    /**
+     *
+     * @param \Doctrine\Common\Persistence\Event\LifecycleEventArgs $event
+     */
+    public function onAfterDelete(LifecycleEventArgs $event)
+    {
+        // Add your code here
+    }
 }

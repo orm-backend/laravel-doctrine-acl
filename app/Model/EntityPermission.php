@@ -16,7 +16,7 @@ class EntityPermission extends \ItAces\ACL\Entities\EntityPermission implements 
         return [
             'permission' => ['required', 'integer', 'min:1'],
             'model' => ['required', 'string', 'max:255'],
-            'role' => ['required', 'unique:App\Model\EntityPermission,role_id,'.$this->getId().',id,model,'.$this->getModel()]
+            'role' => ['required', 'unique:App\Model\EntityPermission,role,'.$this->getId().',id,model,'.$this->getModel()]
         ];
     }
     

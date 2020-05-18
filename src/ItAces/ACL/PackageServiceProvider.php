@@ -26,7 +26,7 @@ class PackageServiceProvider extends ServiceProvider
         $this->bootModel(
             $manager,
             [
-                base_path('vendor/it-aces/laravel-doctrine-acl/src/ItAces/ACL/Entities') => 'ItAces\ORM\Entities'
+                base_path('vendor/it-aces/laravel-doctrine-acl/src/ItAces/ACL/Entities') => 'ItAces\ACL\Entities'
             ],
             'ItAces\ACL\Entities'
         );
