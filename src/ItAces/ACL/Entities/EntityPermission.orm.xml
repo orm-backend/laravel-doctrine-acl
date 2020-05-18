@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<mapped-superclass name="ItAces\ACL\Entities\EntityPermission">
+		<indexes>
+			<index name="entitypermission_permission_index" columns="permission" />
+			<index name="entitypermission_model_index" columns="model" />
+			<index name="entitypermission_role_id_index" columns="role_id" />
+			<index name="entitypermission_created_at_index" columns="created_at" />
+			<index name="entitypermission_updated_at_index" columns="updated_at" />
+			<index name="entitypermission_deleted_at_index" columns="deleted_at" />
+			<index name="entitypermission_created_by_index" columns="created_by" />
+			<index name="entitypermission_updated_by_index" columns="updated_by" />
+			<index name="entitypermission_deleted_by_index" columns="deleted_by" />
+		</indexes>
+		<unique-constraints>
+			<unique-constraint name="entitypermission_enity_role_unique" columns="model,role_id" />
+		</unique-constraints>
+		<field name="permission" type="integer" nullable="false">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+		</field>
+		<field name="model" type="string" length="255" nullable="false">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<many-to-one field="role" target-entity="App\Model\Role" fetch="LAZY">
+			<cache usage="NONSTRICT_READ_WRITE" />
+			<cascade>
+				<cascade-persist />
+				<cascade-merge />
+				<cascade-refresh />
+			</cascade>
+			<join-columns>
+				<join-column name="role_id" referenced-column-name="id" nullable="false" />
+			</join-columns>
+		</many-to-one>
+	</mapped-superclass>
+</doctrine-mapping>
