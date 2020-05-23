@@ -26,11 +26,5 @@
 	            "ItAces\\ACL\\PackageServiceProvider"
 	        ]
 	    }
-	},
-	"repositories": [
-        {
-           "type": "path",
-           "url": "../it-aces/laravel-doctrine/"
-        }
-	]
+	}
 }
