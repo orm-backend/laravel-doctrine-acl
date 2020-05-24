@@ -1,10 +1,10 @@
 # ACL interface implementation. Permissions are stored in the database.
 
-## Requirements
+## Dependencies
 
-"it-aces/laravel-doctrine"
+ * [it-aces/laravel-doctrine](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine/src/master/)
 
-## Installation
+## Install
 
 * Add composer repository
 
@@ -27,4 +27,17 @@
 composer require it-aces/laravel-doctrine-acl
 ```
 
-To manage permissions, install the **it-aces/laravel-doctrine-admin** package.
+## Setting up
+
+* Publising model and creating the DB tables
+
+```BASH
+php artisan vendor:publish --provider="ItAces\ACL\PackageServiceProvider"
+php artisan doctrine:clear:metadata:cache
+php artisan doctrine:schema:validate
+php artisan doctrine:schema:update
+```
+
+## Next
+
+To manage permissions, install [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/) package.
