@@ -2,14 +2,16 @@
 namespace ItAces\ACL\Entities;
 
 use App\Model\Role;
-use App\Model\User;
-use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
-use Illuminate\Support\Facades\Auth;
 use ItAces\ORM\Entities\EntityBase;
 
 abstract class EntityPermission extends EntityBase
 {
 
+    /**
+     * @var int
+     */
+    protected $id;
+    
     /**
      * 
      * @var integer
