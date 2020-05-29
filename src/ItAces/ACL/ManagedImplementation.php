@@ -18,16 +18,16 @@ class ManagedImplementation extends DefaultImplementation
      * 
      * @param string $classUrlName
      * @param int $userId
-     * @return int
+     * @return int|null
      */
-    protected function getEntityPermissions(string $classUrlName, int $userId = null) : int
+    protected function getEntityPermissions(string $classUrlName, int $userId = null)
     {
         $permissions = 0;
         $ids = [];
         $roles = $this->getUserRoles($userId);
 
         if (!$roles) {
-            return 0;
+            return null;
         }
         
         foreach ($roles as $role) {
@@ -42,18 +42,22 @@ class ManagedImplementation extends DefaultImplementation
         $query = $this->em->createQueryBuilder()
             ->select('e')
             ->from(EntityPermission::class, 'e')
-            //->where('e.model = :model')
-            ->where('e.role IN (:ids)')
-            //->setParameter('model', $classUrlName)
+            ->where('e.model = :model')
+            ->andWhere('e.role IN (:ids)')
+            ->setParameter('model', $classUrlName)
             ->setParameter('ids', $ids, Connection::PARAM_INT_ARRAY)
             ->getQuery()
-            ->setCacheable( config('itaces.caches.enabled', true) );
+            ->enableResultCache(config('itaces.caches.result_ttl'));
         
         /**
          *
          * @var \App\Model\EntityPermission[] $entityPermissions
          */
         $entityPermissions = $query->getResult();
+        
+        if (!$entityPermissions) {
+            return null;
+        }
         
         foreach ($entityPermissions as $entityPermission) {
             if ($entityPermission->getModel() == $classUrlName) {
