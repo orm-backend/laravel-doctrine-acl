@@ -6,7 +6,7 @@ class EntityPermission extends \ItAces\ACL\Entities\EntityPermission
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getModelValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -20,7 +20,7 @@ class EntityPermission extends \ItAces\ACL\Entities\EntityPermission
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getRequestValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

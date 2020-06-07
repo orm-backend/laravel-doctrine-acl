@@ -2,9 +2,9 @@
 namespace ItAces\ACL\Entities;
 
 use App\Model\Role;
-use ItAces\ORM\Entities\EntityBase;
+use ItAces\ORM\Entities\BaseEntity;
 
-abstract class EntityPermission extends EntityBase
+abstract class EntityPermission extends BaseEntity
 {
 
     /**
