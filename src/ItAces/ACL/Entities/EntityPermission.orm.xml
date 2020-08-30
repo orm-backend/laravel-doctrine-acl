@@ -2,7 +2,7 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-	<mapped-superclass name="ItAces\ACL\Entities\EntityPermission">
+	<mapped-superclass name="VVK\ACL\Entities\EntityPermission">
 		<indexes>
 			<index name="entitypermission_permission_index" columns="permission" />
 			<index name="entitypermission_model_index" columns="model" />

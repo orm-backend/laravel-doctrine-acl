@@ -1,8 +1,8 @@
 <?php
-namespace ItAces\ACL\Entities;
+namespace VVK\ACL\Entities;
 
 use App\Model\Role;
-use ItAces\ORM\Entities\BaseEntity;
+use VVK\ORM\Entities\BaseEntity;
 
 abstract class EntityPermission extends BaseEntity
 {

@@ -2,7 +2,7 @@
 
 ## Dependencies
 
- * [it-aces/laravel-doctrine](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine/src/master/)
+ * [vvk/laravel-doctrine](https://github.com/vvk-kolsky/laravel-doctrine/src/master/)
 
 ## Install
 
@@ -12,11 +12,11 @@
 "repositories": [
 	{
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-acl.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-acl.git"
     }
 ]
 ```
@@ -24,7 +24,7 @@
 * Install packages
 
 ```BASH
-composer require it-aces/laravel-doctrine-acl
+composer require vvk/laravel-doctrine-acl
 ```
 
 ## Setting up
@@ -32,7 +32,7 @@ composer require it-aces/laravel-doctrine-acl
 * Publising model and creating the DB tables
 
 ```BASH
-php artisan vendor:publish --provider="ItAces\ACL\PackageServiceProvider"
+php artisan vendor:publish --provider="VVK\ACL\PackageServiceProvider"
 php artisan doctrine:clear:metadata:cache
 php artisan doctrine:schema:validate
 php artisan doctrine:schema:update
@@ -40,4 +40,4 @@ php artisan doctrine:schema:update
 
 ## Next
 
-To manage permissions, install [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/) package.
+To manage permissions, install [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin/src/master/) package.

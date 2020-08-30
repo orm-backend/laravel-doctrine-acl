@@ -1,5 +1,5 @@
 <?php
-namespace ItAces\ACL;
+namespace VVK\ACL;
 
 use App\Model\EntityPermission;
 use Doctrine\DBAL\Connection;

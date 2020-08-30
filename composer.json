@@ -1,9 +1,9 @@
 {
-    "name": "it-aces/laravel-doctrine-acl",
+    "name": "vvk/laravel-doctrine-acl",
     "description": "Adds support for user group and enitiy permissions.",
     "type": "library",
     "license": "MIT",
-    "keywords": ["it-aces", "laravel-doctrine", "acl"],
+    "keywords": ["vvk", "laravel-doctrine", "acl"],
     "authors": [
         {
             "name": "Vitaliy Kovalenko",
@@ -11,19 +11,19 @@
         }
     ],
     "require": {
-    	"it-aces/laravel-doctrine": "dev-master"
+    	"vvk/laravel-doctrine": "dev-master"
     },
     "require-dev": {
     },
     "autoload": {
         "psr-4": {
-        	"ItAces\\ACL\\": "src/ItAces/ACL/"
+        	"VVK\\ACL\\": "src/VVK/ACL/"
         }
 	},
     "extra": {
 	    "laravel": {
 	        "providers": [
-	            "ItAces\\ACL\\PackageServiceProvider"
+	            "VVK\\ACL\\PackageServiceProvider"
 	        ]
 	    }
 	}

@@ -1,8 +1,8 @@
 <?php
-namespace ItAces\ACL;
+namespace VVK\ACL;
 
 use Doctrine\ORM\EntityManagerInterface;
-use ItAces\ServiceProvider;
+use VVK\ServiceProvider;
 
 /**
  *
@@ -26,9 +26,9 @@ class PackageServiceProvider extends ServiceProvider
         $this->bootModel(
             $manager,
             [
-                base_path('vendor/it-aces/laravel-doctrine-acl/src/ItAces/ACL/Entities') => 'ItAces\ACL\Entities'
+                base_path('vendor/vvk/laravel-doctrine-acl/src/VVK/ACL/Entities') => 'VVK\ACL\Entities'
             ],
-            'ItAces\ACL\Entities'
+            'VVK\ACL\Entities'
         );
     }
     
