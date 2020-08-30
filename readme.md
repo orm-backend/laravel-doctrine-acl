@@ -2,7 +2,7 @@
 
 ## Dependencies
 
- * [vvk/laravel-doctrine](https://github.com/vvk-kolsky/laravel-doctrine/src/master/)
+ * [vvk/laravel-doctrine](https://github.com/vvk-kolsky/laravel-doctrine)
 
 ## Install
 
@@ -40,4 +40,4 @@ php artisan doctrine:schema:update
 
 ## Next
 
-To manage permissions, install [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin/src/master/) package.
+To manage permissions install [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin) package.
