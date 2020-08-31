@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-    	"vvk/laravel-doctrine": "dev-master"
+    	"orm-backend/laravel-doctrine": "dev-master"
     },
     "require-dev": {
     },

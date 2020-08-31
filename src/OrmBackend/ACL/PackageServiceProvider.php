@@ -26,7 +26,7 @@ class PackageServiceProvider extends ServiceProvider
         $this->bootModel(
             $manager,
             [
-                base_path('vendor/vvk/laravel-doctrine-acl/src/OrmBackend/ACL/Entities') => 'OrmBackend\ACL\Entities'
+                base_path('vendor/orm-backend/laravel-doctrine-acl/src/OrmBackend/ACL/Entities') => 'OrmBackend\ACL\Entities'
             ],
             'OrmBackend\ACL\Entities'
         );
