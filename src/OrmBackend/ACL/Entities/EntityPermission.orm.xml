@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-	<mapped-superclass name="VVK\ACL\Entities\EntityPermission">
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xs:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<mapped-superclass name="OrmBackend\ACL\Entities\EntityPermission">
 		<indexes>
 			<index name="entitypermission_permission_index" columns="permission" />
 			<index name="entitypermission_model_index" columns="model" />

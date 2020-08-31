@@ -1,12 +1,12 @@
 <?php
 namespace App\Model;
 
-class EntityPermission extends \VVK\ACL\Entities\EntityPermission
+class EntityPermission extends \OrmBackend\ACL\Entities\EntityPermission
 {
     /**
      *
      * {@inheritDoc}
-     * @see \VVK\ORM\Entities\Entity::getModelValidationRules()
+     * @see \OrmBackend\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -20,7 +20,7 @@ class EntityPermission extends \VVK\ACL\Entities\EntityPermission
     /**
      *
      * {@inheritDoc}
-     * @see \VVK\ORM\Entities\Entity::getRequestValidationRules()
+     * @see \OrmBackend\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {
