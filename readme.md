@@ -2,7 +2,7 @@
 
 ## Dependencies
 
- * [orm-backend/laravel-doctrine](https://github.com/vvk-kolsky/laravel-doctrine)
+ * [orm-backend/laravel-doctrine](https://github.com/orm-backend/laravel-doctrine)
 
 ## Install
 
@@ -12,11 +12,11 @@
 "repositories": [
 	{
        "type": "vcs",
-       "url": "git@github.com:vvk-kolsky/laravel-doctrine.git"
+       "url": "git@github.com:orm-backend/laravel-doctrine.git"
     },
     {
        "type": "vcs",
-       "url": "git@github.com:vvk-kolsky/laravel-doctrine-acl.git"
+       "url": "git@github.com:orm-backend/laravel-doctrine-acl.git"
     }
 ]
 ```
@@ -40,4 +40,4 @@ php artisan doctrine:schema:update
 
 ## Next
 
-To manage permissions install [orm-backend/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin) package.
+To manage permissions install [orm-backend/laravel-doctrine-admin](https://github.com/orm-backend/laravel-doctrine-admin) package.
