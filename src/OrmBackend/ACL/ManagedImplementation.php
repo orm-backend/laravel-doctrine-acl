@@ -47,7 +47,7 @@ class ManagedImplementation extends DefaultImplementation
             ->setParameter('model', $classUrlName)
             ->setParameter('ids', $ids, Connection::PARAM_INT_ARRAY)
             ->getQuery()
-            ->enableResultCache(config('itaces.caches.result_ttl'));
+            ->enableResultCache(config('ormbackend.caches.result_ttl'));
         
         /**
          *

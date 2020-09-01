@@ -21,7 +21,7 @@ class PackageServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../../../app/Model' => app_path('Model'),
-        ], 'itaces-model');
+        ], 'ormbackend-model');
         
         $this->bootModel(
             $manager,
