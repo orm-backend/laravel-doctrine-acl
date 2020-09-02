@@ -25,13 +25,13 @@ class ManagedImplementation extends DefaultImplementation
         $permissions = 0;
         $ids = [];
         $roles = $this->getUserRoles($userId);
-
+        
         if (!$roles) {
             return null;
         }
         
         foreach ($roles as $role) {
-            $ids[] = $role->getId();
+            $ids[] = $role->getPrimary();
         }
 
         /**
